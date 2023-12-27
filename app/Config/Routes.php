@@ -17,11 +17,11 @@ $routes->get('/register', 'Home::register');
 $routes->group('admin', static function ($routes) {
 
     $routes->group('', [], static function ($routes) {
-        $routes->view('example-page','example-page');
+        $routes->view('dashboard','dashboard');
     });
     
     $routes->group('', [], static function ($routes) {
-        $routes->view('example-auth','example-auth');
+        $routes->view('register','register');
+        $routes->view('login','login');
     });
-
 });

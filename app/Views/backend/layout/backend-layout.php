@@ -29,7 +29,8 @@
     <div class="pre-loader">
         <div class="pre-loader-box">
             <div class="loader-logo">
-                <img src="/backend/vendors/images/deskapp-logo.svg" alt="" />
+                <!-- <img src="/backend/vendors/images/deskapp-logo.svg" alt="" /> -->
+                <h3>faisalahmmedapon</h3>
             </div>
             <div class="loader-progress" id="progress_div">
                 <div class="bar" id="bar1"></div>

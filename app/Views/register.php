@@ -1,85 +1,189 @@
-<!doctype html>
-<html lang="en">
+<?= $this->extend('backend/layout/auth-layout.php') ?>
+<?= $this->section('content'); ?>
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>Learn codeigniter 4!</title>
-</head>
-
-<body>
-
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="#">Learn codeigniter 4</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="<?php echo base_url(); ?>">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="<?php echo base_url('about'); ?>">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="<?php echo base_url('contact'); ?>">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="<?php echo base_url('service'); ?>">Service</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="<?php echo base_url('schedule'); ?>">Schedule</a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Profile
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="<?php echo base_url('login'); ?>">Login</a></li>
-                                <li><a class="dropdown-item" href="<?php echo base_url('register'); ?>">Register</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-
-    <div class="container pt-3">
-        <div class="row">
-
-
-            <?php for ($x = 0; $x <= 100; $x++) { ?>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-header">Learn codeigniter 4</div>
-                    <div class="card-body">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, dolore.</p>
+<div class="register-box bg-white box-shadow border-radius-10">
+    <div class="wizard-content">
+        <form class="tab-wizard2 wizard-circle wizard">
+            <h5>Basic Account Credentials</h5>
+            <section>
+                <div class="form-wrap max-width-600 mx-auto">
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Email Address*</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Username*</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Password*</label>
+                        <div class="col-sm-8">
+                            <input type="password" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Confirm Password*</label>
+                        <div class="col-sm-8">
+                            <input type="password" class="form-control" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <?php  } ?>
-        </div>
+            </section>
+            <!-- Step 2 -->
+            <h5>Personal Information</h5>
+            <section>
+                <div class="form-wrap max-width-600 mx-auto">
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Full Name*</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row align-items-center">
+                        <label class="col-sm-4 col-form-label">Gender*</label>
+                        <div class="col-sm-8">
+                            <div class="custom-control custom-radio custom-control-inline pb-0">
+                                <input type="radio" id="male" name="gender" class="custom-control-input" />
+                                <label class="custom-control-label" for="male">Male</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline pb-0">
+                                <input type="radio" id="female" name="gender" class="custom-control-input" />
+                                <label class="custom-control-label" for="female">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">City</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">State</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Step 3 -->
+            <h5>Payment Method & Info</h5>
+            <section>
+                <div class="form-wrap max-width-600 mx-auto">
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Credit Card Type</label>
+                        <div class="col-sm-8">
+                            <select class="form-control selectpicker" title="Select Card Type">
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row align-items-center">
+                        <label class="col-sm-4 col-form-label">Credit Card Number</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">CVC</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Expiration Date</label>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="col-6">
+                                    <select class="form-control selectpicker" title="Month" data-size="5">
+                                        <option value="01">January</option>
+                                        <option value="02">February</option>
+                                        <option value="03">March</option>
+                                        <option value="04">April</option>
+                                        <option value="05">May</option>
+                                        <option value="06">June</option>
+                                        <option value="07">July</option>
+                                        <option value="08">August</option>
+                                        <option value="09">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-control selectpicker" title="Year" data-size="5">
+                                        <option>2020</option>
+                                        <option>2019</option>
+                                        <option>2018</option>
+                                        <option>2017</option>
+                                        <option>2016</option>
+                                        <option>2015</option>
+                                        <option>2014</option>
+                                        <option>2013</option>
+                                        <option>2012</option>
+                                        <option>2011</option>
+                                        <option>2010</option>
+                                        <option>2009</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Step 4 -->
+            <h5>Overview Information</h5>
+            <section>
+                <div class="form-wrap max-width-600 mx-auto">
+                    <ul class="register-info">
+                        <li>
+                            <div class="row">
+                                <div class="col-sm-4 weight-600">Email Address</div>
+                                <div class="col-sm-8">example@abc.com</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-sm-4 weight-600">Username</div>
+                                <div class="col-sm-8">Example</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-sm-4 weight-600">Password</div>
+                                <div class="col-sm-8">.....000</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-sm-4 weight-600">Full Name</div>
+                                <div class="col-sm-8">john smith</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-sm-4 weight-600">Location</div>
+                                <div class="col-sm-8">123 Example</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="custom-control custom-checkbox mt-4">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" />
+                        <label class="custom-control-label" for="customCheck1">I have read and agreed to the terms of
+                            services and
+                            privacy policy</label>
+                    </div>
+                </div>
+            </section>
+        </form>
     </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
 
-</body>
-
-</html>
+<?= $this->endSection(); ?>
